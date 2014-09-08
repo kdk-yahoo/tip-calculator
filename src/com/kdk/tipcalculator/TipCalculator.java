@@ -15,6 +15,7 @@ public class TipCalculator extends Activity {
 
 	private double price;
 	private int percent;
+	private static final int DEFAULT_TIP_PERCENT = 15;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class TipCalculator extends Activity {
         setContentView(R.layout.activity_tip_calculator);
         EditText etPrice = (EditText) findViewById(R.id.etPrice);
         EditText etCustomTip = (EditText) findViewById(R.id.etCustomTip);
-        percent = 15;
+        percent = DEFAULT_TIP_PERCENT;
         
         etPrice.addTextChangedListener(new TextWatcher(){
 
@@ -105,14 +106,5 @@ public class TipCalculator extends Activity {
     	Log.d("TipCalc", "20%");
     	percent = 20;
     	calcTip();
-    }
-    
-    public void setTipCustom(View v){
-		EditText etCustomTip = (EditText)v;
-    	try{
-    		percent = Integer.parseInt(etCustomTip.getText().toString());
-    	}catch(NumberFormatException e){
-    		//Do nothing
-    	}
     }
 }
