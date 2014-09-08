@@ -3,5 +3,11 @@
 
     <string name="app_name">Tip Calculator</string>
     <string name="hello_world">Hello world!</string>
+    <string name="bt10Percent">10%</string>
+    <string name="bt15Percent">15%</string>
+    <string name="bt20Percent">20%</string>
+    <string name="tvPriceHint">Price</string>
+    <string name="tvTip">The tip is:</string>
+    <string name="etCustomTip">Tip</string>
 
 </resources>
