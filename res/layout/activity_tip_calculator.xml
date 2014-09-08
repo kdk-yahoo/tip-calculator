@@ -35,7 +35,7 @@
         android:layout_below="@+id/etPrice"
         android:layout_marginTop="54dp"
         android:gravity="center"
-        android:showDividers="middle">
+        android:showDividers="middle" >
 
         <Button
             android:id="@+id/b10Percent"
@@ -84,12 +84,13 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="103dp"
-        android:gravity="left">
+        android:gravity="center" >
 
         <TextView
             android:id="@+id/tvSplitMessage"
@@ -99,16 +100,33 @@
             android:text="@string/tvSplitMessage"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
+        <Button
+            android:id="@+id/bSplitPlus"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:ems="2"
+            android:text="+" 
+            android:onClick="incrSplit"/>
+
         <EditText
             android:id="@+id/etSplit"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:ems="2"
             android:gravity="center"
             android:hint="@string/etSplintHint"
             android:inputType="number"
-            
             android:text="1" />
+
+        <Button
+            android:id="@+id/bSplitMinus"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:ems="2"
+            android:text="-" 
+            android:onClick="decrSplit"/>
 
     </LinearLayout>
 

@@ -102,7 +102,6 @@ public class TipCalculator extends Activity {
 					calcTip();
 				}catch(Exception e){
 					s.clear();
-					s.append("1");
 					calcTip();
 				}
 				
@@ -140,5 +139,11 @@ public class TipCalculator extends Activity {
     	Log.d("TipCalc", "20%");
     	percent = 20;
     	calcTip();
+    }
+    public void incrSplit(View v){
+    	split++;
+    }
+    public void decrSplit(View v){
+    	split--;
     }
 }
