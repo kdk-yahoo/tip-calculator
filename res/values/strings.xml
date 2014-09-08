@@ -9,5 +9,7 @@
     <string name="tvPriceHint">Price</string>
     <string name="tvTip">The tip is:</string>
     <string name="etCustomTip">Tip</string>
+    <string name="etSplintHint">Split</string>
+    <string name="tvSplitMessage">Split:</string>
 
 </resources>

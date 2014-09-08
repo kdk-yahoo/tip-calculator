@@ -15,6 +15,7 @@ public class TipCalculator extends Activity {
 
 	private double price;
 	private int percent;
+	private int split;
 	private static final int DEFAULT_TIP_PERCENT = 15;
 	
     @Override
@@ -23,7 +24,9 @@ public class TipCalculator extends Activity {
         setContentView(R.layout.activity_tip_calculator);
         EditText etPrice = (EditText) findViewById(R.id.etPrice);
         EditText etCustomTip = (EditText) findViewById(R.id.etCustomTip);
+        EditText etSplit = (EditText) findViewById(R.id.etSplit);
         percent = DEFAULT_TIP_PERCENT;
+        split = 1;
         
         etPrice.addTextChangedListener(new TextWatcher(){
 
@@ -75,6 +78,37 @@ public class TipCalculator extends Activity {
 			}
         	
         });
+        
+        etSplit.addTextChangedListener(new TextWatcher(){
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				try{
+					split = Integer.parseInt(s.toString());
+					calcTip();
+				}catch(Exception e){
+					s.clear();
+					s.append("1");
+					calcTip();
+				}
+				
+			}
+        	
+        });
     }
     
     private void calcTip(){
@@ -83,7 +117,7 @@ public class TipCalculator extends Activity {
     	try{
         	EditText etPrice = (EditText) findViewById(R.id.etPrice);
         	price =  Double.valueOf(etPrice.getText().toString());
-        	tvTip.setText(String.format("%.2f", price*percent/100));
+        	tvTip.setText(String.format("%.2f", (price*percent/100)/split));
     	}catch (NumberFormatException e){
     		Log.d("TipCalc", "caught");
     		tvTip.setText("");

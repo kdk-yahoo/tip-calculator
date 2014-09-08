@@ -28,59 +28,88 @@
         android:layout_toRightOf="@+id/tvTipMesage"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
-        android:id="@+id/b15Percent"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/b10Percent"
-        android:onClick="setTip15Percent"
-        android:text="@string/bt15Percent" />
+        android:layout_below="@+id/etPrice"
+        android:layout_marginTop="54dp"
+        android:gravity="center"
+        android:showDividers="middle">
+
+        <Button
+            android:id="@+id/b10Percent"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:onClick="setTip10Percent"
+            android:text="@string/bt10Percent" />
+
+        <Button
+            android:id="@+id/b15Percent"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:onClick="setTip15Percent"
+            android:text="@string/bt15Percent" />
+
+        <Button
+            android:id="@+id/b20Percent"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:onClick="setTip20Percent"
+            android:text="@string/bt20Percent" />
+
+        <EditText
+            android:id="@+id/etCustomTip"
+            android:layout_width="70dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/etCustomTip"
+            android:inputType="number" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvTipMesage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/b15Percent"
-        android:layout_marginTop="28dp"
         android:text="@string/tvTip"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
-        android:id="@+id/b10Percent"
-        style="?android:attr/buttonStyleSmall"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tvTipMesage"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="15dp"
-        android:onClick="setTip10Percent"
-        android:text="@string/bt10Percent" />
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="103dp"
+        android:gravity="left">
 
-    <Button
-        android:id="@+id/b20Percent"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tvTipMesage"
-        android:layout_toRightOf="@+id/b15Percent"
-        android:onClick="setTip20Percent"
-        android:text="@string/bt20Percent" />
+        <TextView
+            android:id="@+id/tvSplitMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:text="@string/tvSplitMessage"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <EditText
-        android:id="@+id/etCustomTip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tvTipMesage"
-        android:layout_marginLeft="24dp"
-        android:layout_toRightOf="@+id/b20Percent"
-        android:ems="10"
-        android:hint="@string/etCustomTip"
-        android:inputType="number" >
+        <EditText
+            android:id="@+id/etSplit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:gravity="center"
+            android:hint="@string/etSplintHint"
+            android:inputType="number"
+            
+            android:text="1" />
 
-        <requestFocus />
-    </EditText>
+    </LinearLayout>
 
 </RelativeLayout>
