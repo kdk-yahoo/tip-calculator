@@ -24,7 +24,6 @@ public class TipCalculator extends Activity {
         setContentView(R.layout.activity_tip_calculator);
         EditText etPrice = (EditText) findViewById(R.id.etPrice);
         EditText etCustomTip = (EditText) findViewById(R.id.etCustomTip);
-        EditText etSplit = (EditText) findViewById(R.id.etSplit);
         percent = DEFAULT_TIP_PERCENT;
         split = 1;
         
@@ -78,36 +77,7 @@ public class TipCalculator extends Activity {
 			}
         	
         });
-        
-        etSplit.addTextChangedListener(new TextWatcher(){
 
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before,
-					int count) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void afterTextChanged(Editable s) {
-				try{
-					split = Integer.parseInt(s.toString());
-					calcTip();
-				}catch(Exception e){
-					s.clear();
-					calcTip();
-				}
-				
-			}
-        	
-        });
     }
     
     private void calcTip(){
@@ -141,9 +111,19 @@ public class TipCalculator extends Activity {
     	calcTip();
     }
     public void incrSplit(View v){
+    	Log.d("TipCalc","incrSplit");
+    	TextView tvSplit = (TextView) findViewById(R.id.tvSplit);
     	split++;
+    	tvSplit.setText(String.valueOf(split));
+    	calcTip();
     }
     public void decrSplit(View v){
-    	split--;
+    	Log.d("TipCalc", "decrSplit");
+    	if(split > 1){
+    		split--;
+        	TextView tvSplit = (TextView) findViewById(R.id.tvSplit);
+        	tvSplit.setText(String.valueOf(split));
+    		calcTip();
+    	}
     }
 }
